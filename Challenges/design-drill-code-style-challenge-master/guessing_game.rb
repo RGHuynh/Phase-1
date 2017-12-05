@@ -1,26 +1,26 @@
-class Guessing_game
-  VALID_Numbers = (1..100).to_a # Store valid answers in an array
+class GuessingGame
+  valid_numbers = (1..100).to_a
 
-  def initialize answer; @answer = answer
-@solved = false
-# Validate input
-  raise "Answer must be between 1 and 100" unless VALID_Numbers.include? @answer
+  def initialize answer 
+    @answer = answer
+    @solved = false
+    raise "Answer must be between 1 and 100" unless valid_numbers.include? @answer
   end
 
-def guess ( number )
-if number == @answer # Check if the two are equal
-@solved = true
+  def guess (number)
+    if number == @answer 
+      @solved = true
       :correct
-  elsif (number > @answer) # Check if the guess is higher
-@solved = false
-    return :high
-elsif(number<@answer) # Check if the guess is lower
+    elsif (number > @answer) 
       @solved = false
-    :low
-end
+      :high
+    elsif(number < @answer)
+      @solved = false
+      :low
+    end
   end
 
   def solved?
-  @solved
-end
+    @solved
+  end
 end
