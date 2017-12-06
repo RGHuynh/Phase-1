@@ -1,0 +1,23 @@
+Define a method name grab_gold
+  Pass an argument into the parameter
+  Create a variable name gold_satchel that has a value of an empty array
+  Create a variable x and y that both have a value of 0
+  While y is less than the lenght of the argument
+    Create a variable name current_sq with a value of the argument array index 0 of an array index 0
+    If current_sq equals to symbol 'G'
+        Push ":G" into gold_satchel array
+        Replace array index of array index to :R
+    End if statement
+    If x equals to array index 0 lenght minus 1 
+        Change variable x to zero
+        Add plus 1 to variable y
+    Else
+        Add plus 1 to variable x
+    End if statement
+  End while loop 
+  Return variable gold_satchel
+End method
+
+
+
+
