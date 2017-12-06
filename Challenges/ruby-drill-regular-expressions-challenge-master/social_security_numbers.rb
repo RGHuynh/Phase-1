@@ -4,6 +4,7 @@
 
 # Determine whether a string contains a Social Security Number.
 def has_ssn?(string)
+    /\d{3}\D\d{2}\D\d{4}/ === string
 end
 
 # Find and return a Social Security Number.
