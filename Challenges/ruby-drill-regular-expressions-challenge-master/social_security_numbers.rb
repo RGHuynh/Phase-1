@@ -9,10 +9,16 @@ end
 
 # Find and return a Social Security Number.
 def grab_ssn(string)
+  if /\d{3}\D\d{2}\D\d{4}/ === string
+    string[/\d{3}\D\d{2}\D\d{4}/]
+  else
+    p ""
+  end
 end
 
 # Find and return all Social Security Numbers.
 def grab_all_ssns(string)
+    string.scan(/\d{3}\D\d{2}\D\d{4}/)
 end
 
 # Obfuscate all Social Security Numbers. Example: XXX-XX-4430.
