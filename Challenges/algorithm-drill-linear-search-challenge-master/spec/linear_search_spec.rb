@@ -20,5 +20,9 @@ end
 
 
 describe 'global_linear_search' do
-
+  let(:zoo) {['z','o','o']}
+  it 'returns the index of all the occurrence of the element' do
+    index_of_a = global_linear_search('o', zoo)
+    expect(index_of_a).to eq [1,2]
+  end
 end
