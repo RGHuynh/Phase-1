@@ -6,7 +6,11 @@ class RubyRacer
   def initialize(players, die, length = 30)
     @players = players
     @die = die
-    @length = Array.new(15 , " |")
+    @road1 = Array.new(6 , " |")
+    @road2 = Array.new(6 , " |")
+    
+    @road1[0] = @players[0]
+    @road2[1] = @players[1]
   end
 
   # Returns +true+ if one of the players has reached
@@ -22,7 +26,18 @@ class RubyRacer
 
   # Rolls the die and advances +player+ accordingly
   def advance_player(player)
-    die
+    road = []
+    if player == :a
+      road = @road1
+    else 
+      road = @road2
+    end
+ 
+    player_position = road.index(player)
+    new_position = road.index(player) + die
+    road[new_position] = road[player_position]
+    road[player_position] = " |"
+    p road
   end
 
   # Returns the current state of the game as a string
