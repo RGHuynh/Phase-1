@@ -7,13 +7,11 @@ def containing_quotes(sentences)
 end
 
 def balance(expenses, starting_balance)
-  remaining_balance = starting_balance
 
-  expenses.each do |expense|
-    remaining_balance -= expense
+  expenses.reduce(starting_balance) do |balance, expense|
+    balance -= expense
   end
-
-  remaining_balance
+  
 end
 
 def even_length_word(words)
