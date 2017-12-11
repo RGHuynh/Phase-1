@@ -29,13 +29,14 @@ end
 # Format all Social Security Numbers to use single dashes for delimiters:
 # '480014430', '480.01.4430', and '480--01--4430' would all be formatted '480-01-4430'.
 def format_ssns(string)
-    correct_ssn = []
-    store = ""
-    ssn = string.scan(/\d+.\d{2}.\d{4}|\d{3}--\d{2}--\d{4}/)
-    ssn.each {|n| correct_ssn << n.gsub(/(\d{3})[^\d]?[\--]?(\d{2})[^\d]?[\--]?(\d{4})/, '\1-\2-\3')}
-    p store1 = string.scan(/[a-z, A-Z]+/)
-    store3 = store1 + correct_ssn
-    store3.each {|x| store << "#{x} "}
-    store
-
+  correct_ssn = []
+  store = ""
+  ssn = string.scan(/\d+.\d{2}.\d{4}|\d{3}--\d{2}--\d{4}/)
+  ssn.each do |n| 
+    correct_ssn << n.gsub(/(\d{3})[^\d]?[\--]?(\d{2})[^\d]?[\--]?(\d{4})/, '\1-\2-\3') 
+  end
+  correct_ssn.insert(1, ', ')
+  correct_ssn.insert(3, ', and ')
+  ssn_string = correct_ssn.join('')
+  "The numbers are " + ssn_string
 end
