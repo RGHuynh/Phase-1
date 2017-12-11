@@ -23,6 +23,5 @@ def grab_gold(grid)
       x += 1
     end
   end
-
   gold_satchel
 end
