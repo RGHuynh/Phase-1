@@ -1,11 +1,9 @@
 def sum(numbers, starting_value = 0)
-  total = starting_value
 
-  numbers.each do |number|
-    total += number
+  numbers.reduce(starting_value) do |value, number|
+    value += number
   end
-
-  total
+  
 end
 
 def hyphenate(words)
