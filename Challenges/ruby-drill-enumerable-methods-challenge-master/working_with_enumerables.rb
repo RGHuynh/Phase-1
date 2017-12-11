@@ -1,11 +1,9 @@
 def containing_quotes(sentences)
-  sentences_with_quotes = []
+  
+  sentences.map do |sentence|
+    sentence if contains_quote?(sentence)
+  end - [nil]
 
-  sentences.each do |sentence|
-    sentences_with_quotes << sentence if contains_quote?(sentence)
-  end
-
-  sentences_with_quotes
 end
 
 def balance(expenses, starting_balance)
