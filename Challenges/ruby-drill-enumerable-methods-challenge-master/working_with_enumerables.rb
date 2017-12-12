@@ -11,15 +11,13 @@ def balance(expenses, starting_balance)
   expenses.reduce(starting_balance) do |balance, expense|
     balance -= expense
   end
-  
+
 end
 
 def even_length_word(words)
-  words.each do |word|
-    return word if word.length.even? && !word.empty?
+  words.find do |word|
+     word.length.even? && !word.empty?
   end
-
-  nil
 end
 
 def snippets(sentences, desired_word_count = 3)
