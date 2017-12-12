@@ -21,13 +21,9 @@ def even_length_word(words)
 end
 
 def snippets(sentences, desired_word_count = 3)
-  snipped_sentences = []
-
-  sentences.each do |sentence|
-    snipped_sentences << snippet(sentence, desired_word_count)
+  sentences.map do |sentence|
+    snippet(sentence, desired_word_count)
   end
-
-  snipped_sentences
 end
 
 def initials(names)
