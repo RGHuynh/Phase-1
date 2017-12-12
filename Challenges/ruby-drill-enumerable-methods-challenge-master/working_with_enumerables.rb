@@ -27,26 +27,20 @@ def snippets(sentences, desired_word_count = 3)
 end
 
 def initials(names)
-  names_as_initials = []
 
-  names.each do |name|
-    names_as_initials << convert_to_initials(name)
+  names.map do |name|
+    convert_to_initials(name)
   end
 
-  names_as_initials
 end
 
 def pair_abbreviations(pair_data)
-  pairs = {}
 
-  pair_data.each do |data|
-    abbreviation = data[0]
-    full_form    = data[1]
-
-    pairs[full_form] = abbreviation
+  pair_data.reduce(Hash.new) do |i, v|
+    i[v[1]] = v[0]
+    i
   end
 
-  pairs
 end
 
 
